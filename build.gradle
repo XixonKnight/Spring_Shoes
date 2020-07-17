@@ -1,9 +1,21 @@
-plugins {
-    id 'java'
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+group 'project_shoes'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.7.RELEASE")
+    }
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -11,4 +23,16 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-devtools")
+
+// https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.16'
+// https://mvnrepository.com/artifact/org.springframework/spring-webmvc
+    compile group: 'org.springframework', name: 'spring-webmvc', version: '4.3.11.RELEASE'
+// JPA Data (We are going to use Repositories, Entities, Hibernate, etc...)
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+
 }
