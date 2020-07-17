@@ -2,7 +2,7 @@ package applicatiton.data.model;
 
 import javax.persistence.*;
 
-@Entity(name = "dbo_cart-product")
+@Entity(name = "dbo_cart_product")
 public class CartProduct {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
